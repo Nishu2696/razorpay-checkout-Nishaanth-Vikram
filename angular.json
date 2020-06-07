@@ -24,7 +24,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "razorpay"
+    }
+  },
+  "defaultProject": "razorpay",
+  "cli": {
+    "analytics": "ea2c5e64-0f89-43ec-9e37-1e26f2b07451"
+  }
 }
