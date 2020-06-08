@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { WindowRefService } from '../reference.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-orders',
@@ -9,12 +10,16 @@ import { WindowRefService } from '../reference.service';
 })
 export class OrdersComponent implements OnInit {
 
-  @Input() options;
+  @Input() myorders;
+   
+  myorders1;
+  constructor(
+    private winRef: WindowRefService,
+    private route: ActivatedRoute) {
 
-  constructor(private winRef: WindowRefService) {
-
-    console.log("table", this.options);
   }
-  ngOnInit(): void {
+  ngOnInit() {
+    this.myorders1 = this.route.snapshot.paramMap.get('options');
+    console.log(this.myorders1);
   }
 }

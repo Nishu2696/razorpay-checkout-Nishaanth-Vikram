@@ -9,6 +9,7 @@ import { WindowRefService } from '../reference.service';
 })
 export class ProductlistComponent implements OnInit {
 
+  myorders;
   
   constructor(
     private winRef: WindowRefService,
@@ -48,8 +49,9 @@ export class ProductlistComponent implements OnInit {
       console.log(response.razorpay_order_id);
       options.response = response;
       console.log(options);
+      this.myorders = options;
       this.zone.run(() => {
-        this.router.navigate(['/orders'])
+        this.router.navigate(['/orders', options]);
       });
       // call your backend api to verify payment signature & capture transaction
     });
